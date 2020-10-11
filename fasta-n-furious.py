@@ -19,9 +19,9 @@ import re
 def parse_args():
     """Returns arguments given through their assigned flags."""
     parser = argparse.ArgumentParser(
-        usage='python %(prog)s FILE/FOLDER (-s)',
+        usage='python %(prog)s -f FOLDER -xl EXCEL_FILE',
         description="Returns specific sequences of contigs in a Fasta file.",
-        epilog="I live my life a quarter mile at a time.",
+        epilog='Remember to live your life a quarter mile at a time.',
         add_help=True,
         prefix_chars='-',
     )
@@ -35,10 +35,11 @@ def parse_args():
                         help='Excel file containing at least four columns with '
                              'the file name, contig name, start position and '
                              'end position (in that order). Please enter the '
-                             'full path.',
+                             'full path to the file.',
                         action='store',
                         required=True,
                         type=str,
+                        metavar='EXCEL_FILE',
                         dest='xl'
                         )
 
@@ -47,6 +48,7 @@ def parse_args():
                         action='store',
                         required=True,
                         type=str,
+                        metavar='FOLDER',
                         dest='folder'
                         )
 
@@ -78,7 +80,8 @@ def read_excel(file):
 
 
 def main():
-    """ Gets the show on the road. """
+    """Gets the show on the road."""
+    # Get arguments passed to the script.
     args = parse_args()
 
     # Assign excel columns to variables.
@@ -92,7 +95,7 @@ def main():
         with open(folder + '/fasta_sequences.txt', "w") as f:
             for i in range(len(fastas)):
                 # Find files recursively in provided folder path.
-                for root, dirs, files in os.walk(folder):
+                for root, _, files in os.walk(folder):
                     if files:
                         for file in files:
                             # Fasta file is found.
@@ -112,12 +115,15 @@ def main():
 
                                         f.write('\n' * 2)
 
-        print("All sequences have been processed. In this beta version, "
-              "the program does not detect if any files or contigs have not been found. "
-              "Please check that every sequence you intended to find is included in the output file.")
+        print('All sequences have been processed. In this beta version, the '
+              'program does not detect if any files or contigs have not been '
+              'found. Please check that every sequence you intended to find is '
+              'included in the output file.')
 
     else:
         print('That folder does not exist. Did you really think you could trick me?')
+
+    print('See you again!')
 
 
 if __name__ == '__main__':
