@@ -34,11 +34,11 @@ First and foremost, you will need to have Python 3.6 or a later version in your 
 
 
 
-#### Installing fasta-n-furious
+### Installing fasta-n-furious
 
 There are two options to do this, the lazy one and the proper one. Use whichever one fits you the most but please bear in mind that the recommended one is obvious.
 
-##### Lazy option
+#### Lazy option
 
 1. Download the script and copy it to whichever directory takes your fancy.
 
@@ -59,7 +59,7 @@ There are two options to do this, the lazy one and the proper one. Use whichever
 
 
 
-##### Proper option
+#### Proper option
 
 The proper option involves cloning the repository and using the requirements.txt to install the requirements with pip. But since for now only Quim is going to be using this script and I know which option he'll choose, I won't bother with this for now. :smiling_imp:
 
