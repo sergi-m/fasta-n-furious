@@ -75,7 +75,7 @@ python fasta-n-furious.py -h
 
 
 
-I will give you an example to help get you started. All you need is an Excel file containing at least four columns with the file name, contig name, start of sequence and end of sequence (in that order) and the path to the folder containing the FASTA files. Then you quite simply write the following on your pretty little terminal:
+However, being the kind soul that I am, I will give you an example to help get you started. All you need is an Excel file containing at least four columns with the file name, contig name, start of sequence and end of sequence (in that order) and the path to the folder containing the FASTA files. Then you quite simply write the following on your pretty little terminal:
 
 ```bash
 python fasta-n-furious.py -f path/to/fasta_folder -xl path/to/excel_file 
