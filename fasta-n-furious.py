@@ -100,9 +100,10 @@ def main():
                         for file in files:
                             # Fasta file is found.
                             if file == fastas[i]:
-                                separator = '\\' if file.count(
+                                separator = '\\' if root.count(
                                     '/') == 0 else '/'
                                 path_to_file = root + separator + file
+                                print(path_to_file)
                                 for pair in read_fasta(path_to_file):
                                     # Contig is found.
                                     if contigs[i] in pair[0]:
